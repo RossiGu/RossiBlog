@@ -5,7 +5,7 @@ import com.blog.RossiBlog.models.Blog;
 import java.util.List;
 import java.util.UUID;
 
-public interface BlogService {
+public interface PostService {
 
     List<Blog> findAll();
     Blog findById(UUID id);

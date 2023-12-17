@@ -2,13 +2,13 @@ package com.blog.RossiBlog.servicies.implement;
 
 import com.blog.RossiBlog.models.Blog;
 import com.blog.RossiBlog.repositories.BlogRepository;
-import com.blog.RossiBlog.servicies.BlogService;
+import com.blog.RossiBlog.servicies.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.UUID;
 
-public class BlogServiceImpl implements BlogService {
+public class PostServiceImpl implements PostService {
 
     @Autowired
     BlogRepository blogRepository;

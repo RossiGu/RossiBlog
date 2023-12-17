@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "tb_posts")
-public class Blog implements Serializable {
+public class Post implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
