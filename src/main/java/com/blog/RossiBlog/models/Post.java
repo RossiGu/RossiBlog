@@ -1,11 +1,10 @@
 package com.blog.RossiBlog.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+
 import java.util.UUID;
 
 @Entity
@@ -16,11 +15,10 @@ public class Post implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+
     @NotBlank
     private String titulo;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-    @NotBlank
-    private LocalDate data;
+
     @NotBlank
     private String texto;
 
@@ -38,14 +36,6 @@ public class Post implements Serializable {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public LocalDate getData() {
-        return data;
-    }
-
-    public void setData(LocalDate data) {
-        this.data = data;
     }
 
     public String getTexto() {

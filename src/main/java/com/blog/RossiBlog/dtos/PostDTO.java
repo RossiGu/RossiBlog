@@ -4,5 +4,5 @@ import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 
-public record PostDTO(@NotNull String titulo, @NotNull LocalDate data, @NotNull String texto) {
+public record PostDTO(@NotNull String titulo, @NotNull String texto) {
 }

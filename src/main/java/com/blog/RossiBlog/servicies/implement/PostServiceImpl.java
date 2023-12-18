@@ -1,31 +1,39 @@
 package com.blog.RossiBlog.servicies.implement;
 
-import com.blog.RossiBlog.models.Blog;
-import com.blog.RossiBlog.repositories.BlogRepository;
+
+import com.blog.RossiBlog.models.Post;
+import com.blog.RossiBlog.repositories.PostRepository;
 import com.blog.RossiBlog.servicies.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
+@Service
 public class PostServiceImpl implements PostService {
 
     @Autowired
-    BlogRepository blogRepository;
+    PostRepository postRepository;
 
 
-    @Override
-    public List<Blog> findAll() {
-        return blogRepository.findAll();
+    public List<Post> findAll() {
+        return postRepository.findAll();
     }
 
-    @Override
-    public Blog findById(UUID id) {
-        return blogRepository.findById(id).get();
+    public Post findById(UUID id) {
+        Optional<Post> obj = postRepository.findById(id);
+        return obj.get();
     }
 
-    @Override
-    public Blog save(Blog posts) {
-        return blogRepository.save(posts);
+    public Post save(Post obj) {
+        return postRepository.save(obj);
     }
+
+    public void delete(UUID id) {
+        findById(id);
+        postRepository.deleteById(id);
+    }
+
 }
